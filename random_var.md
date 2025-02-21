@@ -285,8 +285,8 @@ If $X$ and $Y$ are considered on a cartesian coordinate plane and a change to po
 let $R^2 = X^2 + Y^2$, and $\Theta = {tan}^{-1}(\frac{Y}{X})$  
 
 So, the region between ($x$ and $x+dx$, $y$ and $y+dy$) = region between ($r$ and $r+dr$, $\theta$ and $r d\theta$). Hence <br /> 
-$\frac{1}{2 \pi {\sigma}^2} exp(-\frac{(x^2+y^2)}{2 {\sigma}^2})dxdy = \frac{1}{2 \pi {\sigma}^2} exp (-\frac{r^2}{2 {\sigma}^2})r dr d \theta = \frac{r}{2 \pi {\sigma}^2} exp (-\frac{r^2}{2 {\sigma}^2}) drd \theta$ <br />
-$ = \frac{r}{{\sigma}^2} exp(-\frac{r^2}{2 {\sigma}^2})dr \times \frac{1}{2 \pi}d \theta$.
+$\frac{1}{2 \pi {\sigma}^2} exp(-\frac{(x^2+y^2)}{2 {\sigma}^2})dxdy = \frac{1}{2 \pi {\sigma}^2} exp (-\frac{r^2}{2 {\sigma}^2})r dr d \theta = \frac{r}{2 \pi {\sigma}^2} exp (-\frac{r^2}{2 {\sigma}^2}) drd \theta =$ <br />
+$\frac{r}{{\sigma}^2} exp(-\frac{r^2}{2 {\sigma}^2})dr \times \frac{1}{2 \pi}d \theta$.
 
 Hence, $f_R(r)$ denoting the PDF of $R = \frac{r}{{\sigma}^2} exp(-\frac{r^2}{2 {\sigma}^2})$, $F_{\Theta}(\theta) = \frac{1}{2 \pi}$.
 
