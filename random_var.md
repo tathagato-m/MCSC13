@@ -201,10 +201,10 @@ Binomial PMF $P_X(n) = ^NC_n p^n (1-p)^{N-n}$. ----- (1) <br />
 Let $\lambda = N.p$, or $p = \frac{\lambda}{n}$.  ------ (2)  <br />
 From (1) and (2), the binomial PMF can be written as <br />
 $P_X(n) = ^N C_n (\frac{\lambda}{n})^n (1-\frac{\lambda}{n})^{N-n} =$  <br />
-$\frac{N!}{n! (N-n)!} (\frac{\lambda}{n})^n (1-\frac{\lambda}{n})^{N-n} $  ------- (3).<br /> 
+$\frac{N!}{n! (N-n)!} (\frac{\lambda}{n})^n (1-\frac{\lambda}{n})^{N-n}$  ------- (3).<br /> 
 
 If N is very large, then (3) can be written as <br />
-$\lim \limits_{N\to\infty} (\frac{{\lambda}^n}{n!}) (\frac{N!}{(N-n)!} \frac{1}{N^n}) (1-\frac{\lambda}{N})^{N-n} $ ------ (4)
+$\lim \limits_{N\to\infty} (\frac{{\lambda}^n}{n!}) (\frac{N!}{(N-n)!} \frac{1}{N^n}) (1-\frac{\lambda}{N})^{N-n}$ ------ (4)
 
 In this term, $(\frac{{\lambda}^n}{n!})$ is indepenent of N; so this is invarient under the limit condition. So, the term can be simplified further as <br />
 $ (\frac{{\lambda}^n}{n!}) \lim \limits_{N\to\infty} T_1\times T_2\times T_3$ where $T_1 = (\frac{N!}{(N-n)!} \frac{1}{N^n}), T_2= (1-\frac{\lambda}{N})^N, T_3 =  (1-\frac{\lambda}{N})^{-n}$.  ------------- (5)
@@ -244,7 +244,7 @@ Refer to [queuing basics pdf](gamma_dist_from_queuing.pdf)
 
 If $N$ is very large and $p$ is close to $\frac{1}{2}$, the binomial densot can be approximated to be a Normal or Gaussian distribution as follows :
 
-$ P(x) = \frac{1}{\sqrt{2 \pi N p q}}exp(-\frac{(x-Np)^2}{2 N p q}) $ where $q$ = $(1-p)$. Refer to [Normal Approx Binomial PDF](NormalApprox_binomial.pdf) to see the actual derivation.
+$P(x) = \frac{1}{\sqrt{2 \pi N p q}}exp(-\frac{(x-Np)^2}{2 N p q})$ where $q$ = $(1-p)$. Refer to [Normal Approx Binomial PDF](NormalApprox_binomial.pdf) to see the actual derivation.
 
 The generic expression of normal or Gaussian PDF is 
 $f_X(x) = \frac{1}{\sigma \sqrt{2 \pi}} exp(-\frac{(x-\mu)^2}{2 {\sigma}^2})$ where $\mu$ and ${\sigma}^2$ are the mean and variance respectively.
