@@ -81,8 +81,7 @@ Example : Measuring minimum temperature of a day during a season. If X be the ra
 In the above example, the probability of observed minimum temperature being within a very small interval $t$ and $t+\delta t$ would be of interest. That probability would be a function of $t$. Let that function be called as $f(t)$. So<br />
 $f(t)$ = probability of observed minimum temperature being within $t$ and $t+\delta t$ is called the probability density function of $X$. Normally this function is denoted as $f_X(t)$. <br />
 In this example let the PDF be <br />
-$f_X(t)=
-\begin{cases}
+$f_X(t)= \begin{cases} \\
   0,& \text{if } t \lt 7 \\
   V_{max} + \frac{V_{max}(t-7)}{4},& \text{if } 7 \le t \lt 11 \\
   \frac{V_{max}(t-11)}{9},& \text{if } 11 \le t \lt 20 \\
