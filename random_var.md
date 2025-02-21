@@ -20,8 +20,8 @@ Random variable is a mapping of mutually exclusive outcomes of an exeriment or p
 
 In the above experiment, let probability 
 of the train arriving ahead of time, on time and late is 0.1, 0.6 and 0.3 respectively. This can be written as <br /> 
-$Prob(X=0) = 0.1,~Prob(X=1) = 0.6,~Prob(X=2) = 0.3. $ Or <br />
-$Prob(X=x) = P(x)~where $
+$Prob(X=0) = 0.1,~Prob(X=1) = 0.6,~Prob(X=2) = 0.3.$ Or <br />
+$Prob(X=x) = P(x)~where$
 
 $$
 P(x)=
