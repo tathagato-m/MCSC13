@@ -138,13 +138,13 @@ A person needs to travel from his home to the railway station and it takes him 1
 starts between 9.00 AM to 9.10 AM as given below.
 
 <p align="center">
-<img src=/home/tathagato/classes/2024_25/MCSC13/probability/train_from_station.png alt="Train starting from station">
+<img src=./train_from_station.png alt="Train starting from station">
 </p>
 
 The person starts from his home between 8.45 AM to 8.55 AM as given below. 
 
 <p align="center">
-<img src=/home/tathagato/classes/2024_25/MCSC13/probability/man_starting_from_home.png alt="Man starting from Home">
+<img src=./man_starting_from_home.png alt="Man starting from Home">
 </p>
 
 Find the probability that the person misses the train.
