@@ -128,7 +128,7 @@ $F_X(15) = \sum \limits_{x=0}^{x=15} p = 16p = 1$, hence $p=\frac{1}{16}$.
 $F_X(x) = \sum \limits_{i=0}^{i=x} p = (x+1)p = \frac{x+1}{16}.$
 
 <p align="center">
-<img src=/home/tathagato/classes/2024_25/MCSC13/probability/discrete_uniform_cdf.png alt="CDF of discrete uniform RV">
+<img src=./discrete_uniform_cdf.png alt="CDF of discrete uniform RV">
 </p>
 
 
