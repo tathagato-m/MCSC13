@@ -236,4 +236,147 @@ Probability of ($n$ arrivals within $T) = \frac{(\lambda T)^n}{n!} exp(-\lambda 
 
 So, probability of more than 4 people arriving = $1 - exp(-\lambda T) [1 + \lambda T + \frac{(\lambda T)^2}{2!} + \frac{(\lambda T)^3}{3!}]$  
 
+### Exponential density, Gamma Density and basics of queuing theory
+ 
+Refer to [queuing basics pdf](gamma_dist_from_queuing.pdf)
 
+### Normal or Gaussian PDF
+
+If $N$ is very large and $p$ is close to $\frac{1}{2}$, the binomial densot can be approximated to be a Normal or Gaussian distribution as follows :
+
+$ P(x) = \frac{1}{\sqrt{2 \pi N p q}}exp(-\frac{(x-Np)^2}{2 N p q}) $ where $q$ = $(1-p)$. Refer to [Normal Approx Binomial PDF](NormalApprox_binomial.pdf) to see the actual derivation.
+
+The generic expression of normal or Gaussian PDF is 
+$f_X(x) = \frac{1}{\sigma \sqrt{2 \pi}} exp(-\frac{(x-\mu)^2}{2 {\sigma}^2})$ where $\mu$ and ${\sigma}^2$ are the mean and variance respectively.
+
+The distribution function of random variable $X$ having normal density cannot be analytically calculated as $f_X(x)$ is not analytically integrable. Hence the distribution function does not have a closed-form answer.
+
+### Important results, theorems and distributions related to Gaussian 
+
+#### Law of large numbers
+
+If a finite number of samples of a random variable is taken and the mean value is observed to be $\bar X$, then $\bar X$ approaches the actual mean value of the random variable $\mu$ as the number of samples approaches $\infty$. <br />
+There are two versions :<br />
+- Weak law of large numbers : Given an arbitrarily small value $\epsilon$, Probability $(|\bar X - \mu| \ge \epsilon) \to 0$ as $N \to 0$.
+- Strong law of large numbers : Probability$(\lim \limits_{n\to\infty} \bar X = \mu) = 1$. 
+
+#### Central Limit Theorem
+
+Sum of $N$ independent and identically distributed random variables, each with finite mean $\mu$ and variance ${{\sigma}^2}$ approximately follows a normal distribution for very large $N$. Mean and variance of the resultant normal distributed random variable are $N \mu$ and $N {\sigma}^2$. This theorem is of immense importance in probability theory - which helps to approximate outputs of a large number of statistical phenomena to be having Gaussian density. A common example is to model the noise in communication channel to be of Gaussian density.  
+
+#### Addition of iid Gaussian Random variables
+
+If $X = \sum\limits_{i=1}^{N} X_i$ where $X_i$'s are independent and identically distributed (iid) Gaussian random variables with mean = $\mu$ and variance = ${\sigma}^2$, then <br />
+$X$ is also a gaussian distributed random variable with mean = $N\mu$ and variance = $N {\sigma}^2$. 
+
+#### Sum of Squares of two independent Gaussian random variable and Rayleigh density
+
+If $X$ and $Y$ are independent and identically distributed Gaussian random variables with mean = 0 and variance = ${\sigma}^2$, then $Z = \sqrt{(X^2+Y^2)}$ is Rayleigh distributed.
+
+##### Proof
+
+$f_X(x) = \frac{1}{\sigma \sqrt{2 \pi}} exp(-\frac{x^2}{2 {\sigma}^2})$ and $f_X(x) = \frac{1}{\sigma \sqrt{2 \pi}} exp(-\frac{x^2}{2 {\sigma}^2})$ and $f_Y(y) = \frac{1}{\sigma \sqrt{2 \pi}} exp(-\frac{y^2}{2 {\sigma}^2})$. 
+
+Now, the joint probability density of of $x,y$ = $f(x,y)$. So, <br />
+probability($X \leq  x, Y \leq y) = probability(X \leq x)\times probability(Y \leq y) = f_X(x) \times f_Y(y)$ = <br /> 
+$\frac{1}{\sigma \sqrt{2 \pi}} exp(-\frac{x^2}{2 {\sigma}^2}) \times \frac{1}{\sigma \sqrt{2 \pi}} exp(-\frac{y^2}{2 {\sigma}^2})$= $\frac{1}{2 \pi {\sigma}^2} exp(-\frac{(x^2+y^2)}{2 {\sigma}^2})$     
+
+If $X$ and $Y$ are considered on a cartesian coordinate plane and a change to polar coordinate is effected, then <br />
+let $R^2 = X^2 + Y^2$, and $\Theta = {tan}^{-1}(\frac{Y}{X})$  
+
+So, the region between ($x$ and $x+dx$, $y$ and $y+dy$) = region between ($r$ and $r+dr$, $\theta$ and $r d\theta$). Hence <br /> 
+$\frac{1}{2 \pi {\sigma}^2} exp(-\frac{(x^2+y^2)}{2 {\sigma}^2})dxdy = \frac{1}{2 \pi {\sigma}^2} exp (-\frac{r^2}{2 {\sigma}^2})r dr d \theta = \frac{r}{2 \pi {\sigma}^2} exp (-\frac{r^2}{2 {\sigma}^2}) drd \theta$ <br />
+$ = \frac{r}{{\sigma}^2} exp(-\frac{r^2}{2 {\sigma}^2})dr \times \frac{1}{2 \pi}d \theta$.
+
+Hence, $f_R(r)$ denoting the PDF of $R = \frac{r}{{\sigma}^2} exp(-\frac{r^2}{2 {\sigma}^2})$, $F_{\Theta}(\theta) = \frac{1}{2 \pi}$.
+
+The density function of $R$ is called Rayleigh density; and $\Theta$ is exponentially distributed.
+
+#### Chi-Square distribution and density
+
+The chi-square distribution is a probability distribution that arises when summing the squares of independent standard normal variables. <br />
+If $X_1, X_2, \cdots X_k$ are independent standard normal random variable (mean 0 and variance = 1), the sum of their squares follow a Chi-Square distribution. <br />
+Let $Y = {X_1}^2 + {X_2}^2 + \cdots {X_k}^2$ where $k$ is called the degree of freedom. Each of $X_k$ contributes to one degree of freedom.  
+
+##### Chi-Square density function
+
+The PDF of Y is $f_Y(y;k) = \frac{x^{(\frac{k}{2}-1)}e^{-\frac{y}{2}}}{2^{\frac{k}{2}} \Gamma(\frac{k}{2})}$ where <br />
+$\Gamma(\frac{k}{2}) = (\frac{k}{2}-1)!$  if $k \ge 2$ and even number, <br />
+$\Gamma(\frac{1}{2}) = \sqrt{(\pi)}$, <br />
+and $\Gamma(\frac{k}{2}) = \frac{k}{2}\Gamma(\frac{k}{2}-1)$. <br />
+
+Using the last recurrence relation, $\Gamma(\frac{1}{2}) = \sqrt{(\pi)}, \Gamma(\frac{3}{2}) = \frac{1}{2} \Gamma(\frac{1}{2}) = \frac{\sqrt{\pi}}{2}$, <br />
+$\Gamma(\frac{5}{2}) = \frac{5}{2} \Gamma(\frac{3}{2}) = \frac{5}{4} \sqrt{\pi}$ and so on for odd $k$.
+
+##### Chi-Square distribution function
+
+The Cumulative Distribution Function (CDF) gives the probability that a chi-square statistic is less than or equal to a given value: <br />
+$ F(y;k)=P(Y \leq y) $
+where $Y$ follows a chi-square distribution with $k$ degrees of freedom.
+
+The CDF or cumulative distribution function is computed using lower-incomplete Gamma function as follows : <br />
+$F(y;k)=\frac{\gamma(\frac{k}{2},\frac{y}{2})}{\Gamma(k/2)}$ where $\gamma(\frac{k}{2},\frac{y}{2})$ is the lower incomplete gamma function given by the formula <br />
+$\gamma(\frac{k}{2}, \frac{y}{2}) = \int \limits_{0}^{y/2} t^{\frac{k}{2}-1} e^{-t} dt$, and $\Gamma(\frac{k}{2}) = \int \limits_{0}^{\infty} t^{\frac{k}{2}-1} e^{-t}dt$.
+
+As $\gamma(\frac{k}{2}, \frac{x}{2})$ integrates only upto $\frac{x}{2}$, it can be normalized using $\Gamma(\frac{k}{2})$ to have a value between $0$ and $1$. Hence <br />
+the regularized lower incomplete gamma function $P(y;k) = \frac{\gamma(\frac{k}{2}, \frac{x}{2})}{\Gamma(\frac{k}{2})}$ is a valid probability density function same as $F(y;k)$, which is also denoted as $P$-value. Thus, $P$ value or the Chi-Square distribution is used as the metric to do Chi-Square test.
+
+#### Chi-Square test
+
+The chi-square test is a statistical hypothesis test that uses the chi-square distribution to determine whether observed data differ significantly from expected data. There are two common types:
+
+- Chi-square goodness-of-fit test: Checks whether a sample follows a specific distribution.
+- Chi-square test for independence: Determines whether two categorical variables are independent.
+
+##### Rationale
+
+1. Pearson's Chi-Square test takes a metric ${\chi}^2 = \sum \limits_{i=1}^n \frac{(O_i - E_i)^2}{E_i}$, which is assumed to be having Chi-Square distribution where <br />
+- $O_i$ : observed frequency of category $i$
+- $E_i$ : Expected frequency of category $i$
+- n : Number of categories   
+
+2. For each category, a standardized normal distribution is assumed for $O_i$ around the expected value $E_i$ and variance $E_i$. So, a syandardized normal random variable $Z_i$ with mean = 0 and standard deviation $\sqrt(E_i)$ in the form of $Z_i = \frac{(O_i - E_i)}{\sqrt{E_i}}$. Here it is assumed that the variance of $O_i$ = $E_i$ (as in the case of Poisson distribution - only assumtion which can be made in absence of other variance data).
+
+3. $\sum \limits_{i=1}^n {Z_i}^2$ follows a Chi-Square distribution with degree of freedom = $n$. Here is also an assumption that $Z_i$'s are independent, and there is no dependency on them. This is the NULL hypothesis - which means there is no dependency between $O_i$ and $E_i$'s.
+
+##### Example 1
+
+Let there be some data regarding the public transport modes preferred used by Male and female in a city within some time.
+
+| Mode of transport | Male | Female | Total | 
+| --- | --- | --- | --- |  
+| Bus | 1050 | 950 | 2000 | 
+| Metro | 2032 | 1980 | 4012 | 
+| Taxi | 744 | 556 | 1300 | 
+| Auto | 956 | 784 | 1740 |
+| Total | 4782 | 4270 | 9052 | 
+
+Now, <br />
+1. Expected values $E_i$'s are calculated as : <br />
+- $E_1 = 2000*4782/9052 = 1056.562$
+- $E_2 = 4012*4782/9052 = 2119.464$
+- $E_3 = 1300*4782/9052 =  686.765$
+- $E_4 = 1740*4782/9052 = 919.209$
+- $E_5 = 2000*4270/9052 = 943.438$
+- $E_6 = 4012*4270/9052 = 1892.536$
+- $E_7 = 1300*4270/9052 = 713.235$
+- $E_8 = 1740*4270/9052 = 820.791$
+
+2. $Z_i$ values :
+- $Z_1 = \frac{(1050-1056.562)}{\sqrt{1056.562}} = -0.202$  
+- $Z_2 = \frac{(2032-2119.464)}{\sqrt{2119.464}} = -1.9$  
+- $Z_3 = \frac{(744-686.765)}{\sqrt{686.765}} = 2.184$  
+- $Z_4 = \frac{(956-919.209)}{\sqrt{919.209}} = 1.213$  
+- $Z_5 = \frac{(950-943.438)}{\sqrt{943.438}} = 0.213$  
+- $Z_6 = \frac{(1980-1892.536)}{\sqrt{1892.536}} = 2.01$  
+- $Z_7 = \frac{(556-713.235)}{\sqrt{713.235}} = -5.89$  
+- $Z_8 = \frac{(784-820.791)}{\sqrt{820.791}} = -1.284$  
+
+3. Sum up these values : $\sum \limits_{i=1}^8 {Z_i}^2$ = 50.318
+
+4. Degree of freedom - (number of rows - 1) * (number of columns - 1) = 3.
+
+5. Let the significance level $\alpha = 0.05$, now find the critical value from
+Chi-Square table with degree of freedom = 3, significance level = 0.05. 	From Chi-squre table and $\alpha = 0.05$, the critical value = 7.81.
+
+6. The obtained value is way above the critical value - hence the null hypothesis that there is no dependency between male/female and type of public transport is rejected.  
